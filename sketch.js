@@ -27,11 +27,11 @@ function draw() {
   
 if(hasCollided(bullet,wall)){
 bullet.velocityX=0;
-var damage =0.5*weight*speed*speed/thickness*thickness*thickness;
-if(damage>0){
+var damage =0.5*weight*speed*speed/(thickness*thickness*thickness);
+if(damage<0){
   wall.shapeColor="green";
 }
-if(damage<10){
+if(damage>10){
   wall.shapeColor="red";
 }
 
@@ -43,7 +43,7 @@ if(damage<10){
 
 
 
-  hasCollided();
+  
   drawSprites();
 }
 function hasCollided(abullet,awall){
